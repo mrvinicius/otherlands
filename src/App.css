@@ -28,41 +28,49 @@
   color: white;
 }
 
-.Side-bar {
-  display: none;
+.generic-container {
+  padding: 0.75rem 0.75rem;
 }
 
-@media only screen and (max-width: 800px) {
-  .Side-bar.active {
-    float: left;
-    display: block;
-    height: 100%;
-    width: 60%;
+.fw600 {
+  font-weight: 600;
+}
+
+.black-primary-text {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.black-secondary-text {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.dim-text {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+html {
+  line-height: 1.5;
+  /* font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; */
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 801px) {
-  .Side-bar {
-    display: block;
-    float: left;
-    clear: both;
-    width: 20%;
-    height: 100%;
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 14.5px;
   }
 }
 
-/* .View-container {
-  width: 100%;
-  height: 100%;
-}
-
-@media only screen and (min-width: 801px) {
-  .View-container {
-    float: right;
-    width: 80%;
-    height: 100%;
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 15px;
   }
-} */
+}
 
 .Content-container {
   width: 100%;
@@ -82,10 +90,6 @@
     width: calc(100% - 25px);
      */
   }
-}
-
-.generic-container {
-  padding: 0.75rem 0.75rem;
 }
 
 @media only screen and (max-width: 800px) {

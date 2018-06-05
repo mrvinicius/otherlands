@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import SearchField from "./search-field/Search-field";
+import SideBar from "./side-bar/Side-bar";
 
 class DestinationCard extends Component {
   render() {
@@ -14,17 +15,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="Side-bar active">
-          <header className="App-header">LOGO</header>
-          <nav className="App-nav">
-            <ul>
-              <li>Explore</li>
-              <li>Flights</li>
-              <li>Bookmarks</li>
-              <li>Settings</li>
-            </ul>
-          </nav>
-        </div>
+        <SideBar />
         <main className="Content-container otl-green suspendend-view ">
           <div className="generic-container white-text">
             <div className="top-bar">

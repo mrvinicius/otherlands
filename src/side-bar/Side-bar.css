@@ -1,0 +1,55 @@
+.Side-bar {
+  float: left;
+  display: none;
+  padding-left: 30px;
+  padding-left: 6vw;
+  height: 100%;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .Side-bar.active {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 801px) {
+  .Side-bar {
+    display: flex;
+    float: left;
+    padding-left: 4vw;
+    width: 20%;
+    height: 100%;
+  }
+}
+
+.App-header {
+  position: absolute;
+  top: 0;
+}
+
+.App-nav {
+  padding-left: 15px;
+}
+
+.App-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  list-style: none;
+}
+
+.App-nav ul li {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.App-nav li a {
+  display: block;
+  padding: 15px 0;
+  color: inherit;
+  text-decoration: none;
+}
