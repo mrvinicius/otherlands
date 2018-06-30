@@ -6,7 +6,7 @@ class SearchField extends Component {
     return (
       <div className="Search-field-wrapper">
         <input
-          className="Search-field"
+          className="Search-field z-depth-6"
           placeholder="Where do you want to go?"
           type="search"
         />
