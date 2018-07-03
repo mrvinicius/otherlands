@@ -1,0 +1,13 @@
+.Card-grid {
+  position: absolute;
+  top: 98px;
+  bottom: 0;
+  display: grid;
+  margin-top: 30px;
+  padding: 10px 4.75rem;
+  width: 100%;
+  overflow: auto;
+  grid-template-columns: repeat(3, 30%);
+  grid-column-gap: 5%;
+  grid-row-gap: 50px;
+}

@@ -6,7 +6,15 @@ import App from "./App";
 const render = App.render(document.getElementById("root"));
 
 let appState = {
-  sidebarActive: false
+  sidebarActive: false,
+  destinations: [
+    {
+      id: 1,
+      imgUrl: '',
+      title: 'Pantanal',
+      description: 'Complexo do Pantanal, ou simplesmente Pantanal, é um bioma constituído principalmente por uma savana estépica, alagada em sua maior parte, com 250 mil quilômetros quadrados de extensão, altitude média de 100 metros.'
+    }
+  ]
 };
 
 const toggleSidebar = () => {

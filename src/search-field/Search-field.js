@@ -1,18 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Search-field.css";
 
-class SearchField extends Component {
-  render() {
-    return (
-      <div className="Search-field-wrapper">
-        <input
-          className="Search-field z-depth-6"
-          placeholder="Where do you want to go?"
-          type="search"
-        />
-      </div>
-    );
-  }
-}
+const SearchField = () => (
+  <div className="Search-field-wrapper">
+    <input
+      className="Search-field z-depth-4"
+      placeholder="Where do you want to go?"
+      type="search"
+    />
+  </div>
+);
 
 export default SearchField;
