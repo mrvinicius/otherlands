@@ -10,9 +10,24 @@ let appState = {
   destinations: [
     {
       id: 1,
-      imgUrl: '',
-      title: 'Pantanal',
-      description: 'Complexo do Pantanal, ou simplesmente Pantanal, é um bioma constituído principalmente por uma savana estépica, alagada em sua maior parte, com 250 mil quilômetros quadrados de extensão, altitude média de 100 metros.'
+      imgUrl: "",
+      title: "Pantanal",
+      description:
+        "Complexo do Pantanal, ou simplesmente Pantanal, é um bioma constituído principalmente por uma savana estépica, alagada em sua maior parte, com 250 mil quilômetros quadrados de extensão, altitude média de 100 metros."
+    },
+    {
+      id: 2,
+      imgUrl: "",
+      title: "Bonito",
+      description:
+        "Bonito é um município brasileiro da região Centro-Oeste, situado no estado de Mato Grosso do Sul."
+    },
+    {
+      id: 3,
+      imgUrl: "",
+      title: "Atacama",
+      description:
+        "Deserto de Atacama está localizado na região norte do Chile até a fronteira com o Peru. Com cerca de 1000 km de extensão, é considerado o deserto mais alto do mundo."
     }
   ]
 };
