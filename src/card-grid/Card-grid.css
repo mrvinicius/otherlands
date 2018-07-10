@@ -1,48 +1,52 @@
-/* .Card-grid {
-  position: absolute;
-  top: 98px;
-  bottom: 0;
-  display: grid;
-  margin-top: 30px;
-  padding: 10px 4.75rem;
-  width: 100%;
-  overflow: auto;
-  grid-template-columns: repeat(3, 30%);
-  grid-column-gap: 5%;
-  grid-row-gap: 50px;
-}
- */
+@media only screen and (max-width: 800px) {
+  .Card-grid {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.Card-grid {
-  padding: 20px 0;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-}
+  .Card-grid .Destination-card {
+    margin: 0 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(100% - 70px);
+  }
 
-.Card-grid::-webkit-scrollbar {
-  display: none;
-}
+  .Card-grid .Destination-card:first-of-type {
+    margin-left: 35px;
+  }
 
-.Card-grid .Destination-card {
-  margin: 0 10px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: calc(100% - 70px);
-}
+  .Card-grid .Destination-card:last-of-type::after {
+    content: "";
+    position: relative;
+    display: block;
+    right: -35px;
+    float: right;
+    width: 35px;
+    height: 100%;
+  }
 
-.Card-grid .Destination-card:first-of-type {
-  margin-left: 35px;
+  .Card-grid::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.Card-grid .Destination-card:last-of-type::after {
-  content: "";
-  position: relative;
-  display: block;
-  right: -35px;
-  float: right;
-  width: 35px;
-  height: 100%;
+@media only screen and (min-width: 801px) {
+  .Card-grid {
+    position: absolute;
+    top: 98px;
+    bottom: 0;
+    display: grid;
+    margin-top: 30px;
+    padding: 0 50px;
+    width: 100%;
+    overflow: auto;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    grid-column-gap: 5%;
+    grid-row-gap: 50px;
+  }
 }
