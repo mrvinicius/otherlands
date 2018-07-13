@@ -19,18 +19,20 @@
     margin-left: 35px;
   }
 
-  .Card-grid .Destination-card:last-of-type::after {
-    content: "";
-    position: relative;
-    display: block;
-    right: -35px;
-    float: right;
-    width: 35px;
-    height: 100%;
+  .Card-grid .Destination-card:last-of-type {
+    margin-right: 0 !important;
   }
 
   .Card-grid::-webkit-scrollbar {
     display: none;
+  }
+
+  .end-space::after {
+    content: "";
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 100%;
   }
 }
 

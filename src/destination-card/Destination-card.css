@@ -1,8 +1,27 @@
 .Destination-card {
+  position: relative;
+  border-radius: 7px;
+  height: 350px;
   background-color: #fff;
-  border-radius: 10px;
-  height: 300px;
+  overflow: hidden;
 }
 
+.card-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.card-text-container {
+  position: absolute;
+  bottom: 0;
+  padding: 20px 15px;
+  width: 100%;
+  height: 10rem;
+  background-color: bisque;
+  /* overflow: hidden; */
+}
+
+/* .card-text-container */
 /* white-space: nowrap;
     overflow-x: auto; */
