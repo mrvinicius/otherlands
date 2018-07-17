@@ -5,24 +5,30 @@ import SearchField from "./search-field/Search-field";
 import SideBar from "./side-bar/Side-bar";
 import CardGrid from "./card-grid/Card-grid";
 
-const App = ({ appState, toggleSidebar }) => (
+const App = store => (
   <div id="app" className="App">
-    <SideBar active={appState.sidebarActive} />
+    <SideBar active={store.getState().sidebarActive} />
     <main className="Content-container otl-green">
       <div className="generic-container white-text">
         <div className="top-bar">
-          <button onClick={toggleSidebar} type="button">
+          <button onClick={toggleSidebar(store)} type="button">
             <i className="material-icons">menu</i>
           </button>
         </div>
       </div>
-      <SearchField />
-      <CardGrid destinations={appState.destinations} />
-      {/* CardGrid(<DestinationCard />); */}
+      <SearchField onInput={handleSearchChange} />
+      <CardGrid destinations={store.getState().destinations} />
     </main>
-    {/* <footer className="App-footer">Vinicius</footer> */}
   </div>
 );
+
+function toggleSidebar(store) {
+  return () => store.dispatch({ type: "TOGGLE_SIDEBAR", sidebarActive: true });
+}
+
+function handleSearchChange(e) {
+  console.log(e);
+}
 
 App.render = node => {
   return props => {
