@@ -8,7 +8,7 @@ const store = createStore(appReducer);
 const render = App.render(document.getElementById("root"));
 
 render(store);
-const subscription = store.subscribe(render);
+store.subscribe(render);
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 

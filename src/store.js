@@ -31,7 +31,7 @@ const createStore = reducer => {
 
   const store = {
     getState() {
-      return Object.assign({}, state);
+      return { ...state };
     },
     dispatch(action) {
       state = reducer(state, action);
