@@ -4,7 +4,6 @@ function destination(state = [], action) {
       return state.map(
         destination => destination.title.search(action.text) > -1
       );
-      break;
     case "FILTER_DESTINATIONS":
       break;
 

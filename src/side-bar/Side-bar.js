@@ -7,16 +7,16 @@ const SideBar = ({ active }) => (
     <nav className="App-nav">
       <ul className="fw600 dim-text">
         <li>
-          <a href="javascript:void(0)">Explore</a>
+          <a>Explore</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Flights</a>
+          <a>Flights</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Bookmarks</a>
+          <a>Bookmarks</a>
         </li>
         <li>
-          <a href="javascript:void(0)">Settings</a>
+          <a>Settings</a>
         </li>
       </ul>
     </nav>
