@@ -3,6 +3,22 @@ const createStore = reducer => {
     sidebarActive: false,
     destinations: [
       {
+        id: 8,
+        imgUrl: "/img/capitolio-mg.jpg",
+        title: "Capitólio",
+        description:
+          "Capitólio é um município brasileiro do estado de Minas Gerais. De acordo com estimativas do Instituto Brasileiro de Geografia e Estatística, sua população era de 8 574 habitantes em 2014.",
+        attractions: []
+      },
+      {
+        id: 3,
+        imgUrl: "/img/atacama.jpg",
+        title: "Atacama",
+        description:
+          "Deserto de Atacama está localizado na região norte do Chile até a fronteira com o Peru. Com cerca de 1000 km de extensão, é considerado o deserto mais alto do mundo.",
+        attractions: ["Deserto Florido"]
+      },
+      {
         id: 1,
         imgUrl: "/img/pantanal-brasileiro.jpg",
         title: "Pantanal",
@@ -15,14 +31,6 @@ const createStore = reducer => {
         title: "Bonito",
         description:
           "Bonito é um município brasileiro da região Centro-Oeste, situado no estado de Mato Grosso do Sul."
-      },
-      {
-        id: 3,
-        imgUrl: "/img/atacama.jpg",
-        title: "Atacama",
-        description:
-          "Deserto de Atacama está localizado na região norte do Chile até a fronteira com o Peru. Com cerca de 1000 km de extensão, é considerado o deserto mais alto do mundo.",
-        attractions: ["Deserto Florido"]
       },
       {
         id: 4,
