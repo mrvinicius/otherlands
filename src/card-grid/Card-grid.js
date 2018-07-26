@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card-grid.css";
-import DestinationCard from "../destination-card/Destination-card";
+import DestinationCardContainer from "../destination-card/Destination-card.container";
 
 const pair = (prevFn, fn) => (...args) => fn(prevFn(...args));
 const compose = (...fns) => fns.reduceRight(pair);
@@ -14,7 +14,7 @@ const Container = children => (
 );
 const CardGrid = compose(
   Container,
-  destinations => destinations.map(DestinationCard),
+  destinations => destinations.map(DestinationCardContainer),
   prop("destinations")
 );
 

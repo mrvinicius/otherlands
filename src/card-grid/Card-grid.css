@@ -19,6 +19,14 @@
     margin-left: 35px;
   }
 
+  .Card-grid .Destination-card:first-of-type.open {
+    /* margin-left: 0; */
+  }
+
+  /* .Destination-card:first-of-type.open + .Destination-card {
+    margin-left: calc(100% - 70px + 10px + 10px + 35px);
+  } */
+
   .Card-grid .Destination-card:last-of-type {
     margin-right: 0 !important;
   }

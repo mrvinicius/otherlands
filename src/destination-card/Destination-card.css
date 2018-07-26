@@ -2,11 +2,11 @@
   position: relative;
   border-radius: 7px;
   height: 350px;
-  background-color: #fff;
+  min-height: 350px;
   overflow: hidden;
 }
 
-.card-image-container {
+.card-img-container {
   position: relative;
   height: 60%;
 }
@@ -36,7 +36,3 @@
   height: 40%;
   background-color: bisque;
 }
-
-/* .card-text-container */
-/* white-space: nowrap;
-    overflow-x: auto; */
