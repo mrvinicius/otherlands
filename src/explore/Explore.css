@@ -1,0 +1,26 @@
+.Destination-results {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 801px) {
+  .Destination-results {
+    position: absolute;
+    top: 98px;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+  }
+  .Destination-results .generic-header {
+    padding-right: 65px;
+    padding-left: 52px;
+  }
+
+  .Destination-results .Card-grid {
+    position: absolute;
+    top: 49px;
+    bottom: 0;
+    padding: 0 50px 20px;
+    width: 100%;
+    overflow: auto;
+  }
+}

@@ -14,7 +14,7 @@ function destination(state = [], action) {
 
 function sidebar(state = false, action) {
   if (action.type === "TOGGLE_SIDEBAR") {
-    return action.sidebarActive ? true : false;
+    return action.sidebarActive !== undefined ? action.sidebarActive : !state;
   }
 }
 

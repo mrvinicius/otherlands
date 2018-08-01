@@ -38,12 +38,14 @@ const App = store => (
         </nav>
       </div>
       <main className="Content-container otl-green">
-        <div className="generic-container white-text">
-          <div className="top-bar">
-            <button onClick={toggleSidebar(store)} type="button">
-              <i className="material-icons">menu</i>
-            </button>
-          </div>
+        <div className="top-bar white-text">
+          <button
+            className="icon-flat-btn"
+            onClick={toggleSidebar(store)}
+            type="button"
+          >
+            <i className="material-icons">menu</i>
+          </button>
         </div>
         <Switch>
           <Redirect exact from="/" to="/explore" />
@@ -61,7 +63,7 @@ const App = store => (
 );
 
 function toggleSidebar(store) {
-  return () => store.dispatch({ type: "TOGGLE_SIDEBAR", sidebarActive: true });
+  return () => store.dispatch({ type: "TOGGLE_SIDEBAR" });
 }
 
 App.render = node => {

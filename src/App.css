@@ -28,8 +28,8 @@
   color: white;
 }
 
-.generic-container {
-  padding: 11px 0.75rem;
+.top-bar {
+  padding: 15px 20px;
 }
 
 .fw600 {
@@ -77,14 +77,17 @@ html {
 }
 
 .Content-container {
-  position: relative;
+  position: fixed;
+  left: 0;
   width: 100%;
   height: 100%;
   box-shadow: 17px 61px 90px -20px rgba(0, 0, 0, 0.42);
+  transition: left 150ms linear 0ms, transform 150ms linear 0ms;
 }
 
 @media only screen and (min-width: 801px) {
   .Content-container {
+    position: relative;
     float: right;
     margin-right: 2%;
     border-bottom-left-radius: 10px;
@@ -99,9 +102,8 @@ html {
 
 @media only screen and (max-width: 800px) {
   .Side-bar.active + .Content-container {
-    pointer-events: none;
-    position: fixed;
-    left: 55%;
+    /* pointer-events: none; */
+    left: 40%;
     transform: scale(0.8);
   }
 }
@@ -187,4 +189,31 @@ html {
   padding: 15px 0;
   color: inherit;
   text-decoration: none;
+}
+
+.generic-header {
+  display: flex;
+  padding: 12px 29px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.generic-header h1,
+.generic-header h2,
+.generic-header h3,
+.generic-header h4,
+.generic-header h5,
+.generic-header h6,
+.generic-header p {
+  margin: 0;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.icon-flat-btn {
+  display: flex;
 }
