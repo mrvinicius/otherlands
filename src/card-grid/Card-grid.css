@@ -1,5 +1,18 @@
+.simplebar-track.horizontal {
+  display: none;
+}
+
+.end-space::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 100%;
+}
+
 @media only screen and (max-width: 800px) {
-  .Card-grid {
+  .Card-grid,
+  .simplebar-content {
     padding-bottom: 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -8,40 +21,42 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .Card-grid .Destination-card {
+  .Card-grid .Destination-card,
+  .simplebar-content .Destination-card {
     margin: 0 8px;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: calc(100% - 60px);
   }
 
-  .Card-grid .Destination-card:first-of-type {
+  .Card-grid .Destination-card:first-of-type,
+  .simplebar-content .Destination-card:first-of-type {
     margin-left: 30px;
   }
 
-  .Card-grid .Destination-card:last-of-type {
+  .Card-grid .Destination-card:last-of-type,
+  .simplebar-content .Destination-card:last-of-type {
     margin-right: 0 !important;
   }
 
-  .Card-grid::-webkit-scrollbar {
+  .Card-grid::-webkit-scrollbar,
+  .simplebar-content::-webkit-scrollbar {
     display: none;
-  }
-
-  .end-space::after {
-    content: "";
-    position: relative;
-    display: block;
-    width: 30px;
-    height: 100%;
   }
 }
 
 @media only screen and (min-width: 801px) {
-  .Card-grid {
+  .Card-grid,
+  .simplebar-content {
     display: grid;
+    padding-bottom: 33px !important;
     grid-template-columns: repeat(3, 30%);
     grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
     grid-column-gap: 5%;
     grid-row-gap: 50px;
+  }
+
+  .end-space {
+    display: none;
   }
 }
