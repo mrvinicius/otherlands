@@ -217,3 +217,36 @@ html {
 .icon-flat-btn {
   display: flex;
 }
+
+.App {
+  position: relative;
+}
+
+.App.image-as-background {
+}
+.App.image-as-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background-image: url(/img/atacama.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  filter: brightness(0.7);
+}
+
+.App.image-as-background .Content-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* z-depth-2 */
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.8);
+}
+
+.App.image-as-background .App-nav {
+  color: white;
+}

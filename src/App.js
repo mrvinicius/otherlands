@@ -13,15 +13,15 @@ import Flights from "./flights/Flights";
 
 const App = store => (
   <Router>
-    <div id="app" className="App">
+    <div id="app" className="App image-as-background">
       {/* <SideBar active={store.getState().sidebarActive} /> */}
       <div
         className={`Side-bar ${store.getState().sidebarActive ? "active" : ""}`}
       >
         {/* <header className="App-header">LOGO {active}</header> */}
 
-        <nav className="App-nav">
-          <ul className="fw600 dim-text">
+        <nav className="App-nav fw600 dim-text">
+          <ul>
             <li>
               <Link to="/explore">Explore</Link>
             </li>
