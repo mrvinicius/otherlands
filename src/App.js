@@ -13,7 +13,7 @@ import Flights from "./flights/Flights";
 
 const App = store => (
   <Router>
-    <div id="app" className="App image-as-background">
+    <div id="app" className="App">
       {/* <SideBar active={store.getState().sidebarActive} /> */}
       <div
         className={`Side-bar ${store.getState().sidebarActive ? "active" : ""}`}
@@ -37,7 +37,7 @@ const App = store => (
           </ul>
         </nav>
       </div>
-      <main className="Content-container otl-green">
+      <main className="Content-container otl-green destination-opened">
         <div className="top-bar white-text">
           <button
             className="icon-flat-btn"
