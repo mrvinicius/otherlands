@@ -37,7 +37,7 @@ const App = store => (
           </ul>
         </nav>
       </div>
-      <main className="Content-container otl-green destination-opened">
+      <main className="Content-container otl-green">
         <div className="top-bar white-text">
           <button
             className="icon-flat-btn"

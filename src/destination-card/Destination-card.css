@@ -1,14 +1,14 @@
 .Destination-card {
   position: relative;
   border-radius: 7px;
-  height: 350px;
-  min-height: 350px;
+  height: 55vh;
+  min-height: 205px;
   overflow: hidden;
 }
 
 .card-img-container {
   position: relative;
-  height: 60%;
+  height: 100%;
 }
 
 .card-img {
