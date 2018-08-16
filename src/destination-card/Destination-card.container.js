@@ -15,9 +15,37 @@ const updateHistory = id => {
 };
 
 const getClickHandler = id => {
-  return e => {
+  let isOpen = false,
+    lastTopDistance,
+    listener;
+
+  return event => {
+    const card = event.currentTarget,
+      finalizeClosing = e => {
+        if (e.propertyName === "height") {
+          e.currentTarget.classList.remove("open");
+          e.currentTarget.style.top = null;
+          e.currentTarget.removeEventListener("transitionend", finalizeClosing);
+        }
+      };
+
+    if (isOpen) {
+      card.classList.remove("open-active");
+      card.addEventListener("transitionend", finalizeClosing);
+    } else {
+      card.classList.add("open");
+      lastTopDistance = `${card.getBoundingClientRect().top}px`;
+      card.style.top = lastTopDistance;
+
+      const timeout = setTimeout(() => {
+        card.classList.add("open-active");
+        clearTimeout(timeout);
+      });
+    }
+
+    isOpen = !isOpen;
+
     updateHistory(id);
-    // console.log(e);
   };
 };
 

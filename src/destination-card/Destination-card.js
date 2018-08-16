@@ -28,10 +28,19 @@ const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
 };
 
 function getClickHandler(callback) {
-  return event => {
-    // event.currentTarget.classList.toggle("open");
-    callback(event);
-  };
+  return event => callback(event);
+
+  // return event => {
+  //   const card = event.currentTarget;
+
+  //   card.classList.toggle("open");
+  //   card.style.top = `${card.getBoundingClientRect().top}px`;
+  //   setTimeout(() => {
+  //     card.classList.toggle("opening");
+  //   });
+
+  //   callback(event);
+  // };
 }
 
 const handleImgSize = ({ target }) => {
