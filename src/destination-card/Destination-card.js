@@ -15,8 +15,8 @@ const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
 
   return (
     <div
-      onClick={getClickHandler(onClick)}
-      className={`Destination-card cPointer z-depth-3 ${""}`}
+      onClick={event => onClick(event)}
+      className={`Destination-card cPointer z-depth-3`}
     >
       <div className="card-img-container">{img}</div>
       <div className="card-text-container">
@@ -27,29 +27,13 @@ const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
   );
 };
 
-function getClickHandler(callback) {
-  return event => callback(event);
-
-  // return event => {
-  //   const card = event.currentTarget;
-
-  //   card.classList.toggle("open");
-  //   card.style.top = `${card.getBoundingClientRect().top}px`;
-  //   setTimeout(() => {
-  //     card.classList.toggle("opening");
-  //   });
-
-  //   callback(event);
-  // };
-}
-
-const handleImgSize = ({ target }) => {
+function handleImgSize({ target }) {
   let parentHeight = target.parentNode.clientHeight;
   if (target.height < parentHeight) {
     let additionalSize = parentHeight - target.height;
     target.style.height = target.height + additionalSize + "px";
     target.style.width = target.width + additionalSize + "px";
   }
-};
+}
 
 export default DestinationCard;
