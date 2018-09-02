@@ -7,76 +7,58 @@ const DestinationCardContainer = destination => (
   <DestinationCard
     key={destination.id}
     {...destination}
-    onClick={getClickHandler(destination.id)(min800px)}
+    onClick={getClickHandlerByQuery(min800px)}
   />
 );
 
-// TODO: state management integration, action trigger access
-function updateHistory(id) {
-  window.history.pushState({}, "", `/explore/destination/${id}`);
+function getClickHandlerByQuery(mediaQueryList) {
+  let isClosed = true,
+    lastTopDistance;
+  return function handleClick(event) {
+    const card = event.currentTarget;
+
+    if (isClosed) {
+      if (mediaQueryList.matches) {
+        card.style.width = `${card.clientWidth}px`;
+        card.style.left = `${card.getBoundingClientRect().left}px`;
+      }
+
+      lastTopDistance = `${card.getBoundingClientRect().top}px`;
+      card.style.top = lastTopDistance;
+      card.classList.add("open");
+
+      const timeout = setTimeout(() => {
+        card.classList.add("open-active");
+        clearTimeout(timeout);
+      });
+    } else {
+      card.classList.remove("open-active");
+      setCardTransitionEndHandler(card, mediaQueryList);
+    }
+    isClosed = !isClosed;
+  };
 }
 
-function finalizeClosing(card) {
-  card.classList.remove("open");
-  card.style.top = null;
-}
-
-function getCardCloser(mediaQueryList) {
-  return function closeCard(event) {
+function setCardTransitionEndHandler(card, mediaQueryList) {
+  card.addEventListener("transitionend", function handleTransitionEnd(event) {
     if (event.propertyName === "transform") {
       const card = event.currentTarget;
 
       if (mediaQueryList.matches) {
-        prepareToBeStatic(card);
+        card.style.width = null;
+        card.style.left = null;
       }
 
-      finalizeClosing(card);
-
-      card.removeEventListener("transitionend", closeCard);
+      card.classList.remove("open");
+      card.style.top = null;
+      card.removeEventListener("transitionend", handleTransitionEnd);
     }
-  };
+  });
 }
 
-function prepareToBeFixed(card) {
-  card.style.width = `${card.clientWidth}px`;
-  card.style.left = `${card.getBoundingClientRect().left}px`;
-}
-
-function prepareToBeStatic(card) {
-  card.style.width = null;
-  card.style.left = null;
-}
-
-function getClickHandler(id) {
-  let isOpen = false,
-    lastTopDistance;
-
-  return function applyMediaQuery(mediaQueryList) {
-    return function onClick(event) {
-      const card = event.currentTarget;
-
-      if (!isOpen) {
-        if (mediaQueryList.matches) {
-          prepareToBeFixed(card);
-        }
-
-        card.classList.add("open");
-        lastTopDistance = `${card.getBoundingClientRect().top}px`;
-        card.style.top = lastTopDistance;
-
-        const timeout = setTimeout(() => {
-          card.classList.add("open-active");
-          clearTimeout(timeout);
-        });
-      } else {
-        card.classList.remove("open-active");
-        card.addEventListener("transitionend", getCardCloser(mediaQueryList));
-      }
-      isOpen = !isOpen;
-    };
-
-    // updateHistory(id);
-  };
+// TODO: state management integration, action trigger access
+function updateHistory(id) {
+  window.history.pushState({}, "", `/explore/destination/${id}`);
 }
 
 export default DestinationCardContainer;

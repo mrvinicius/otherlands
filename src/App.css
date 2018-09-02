@@ -94,9 +94,7 @@ html {
     border-bottom-right-radius: 10px;
     width: 78%;
     height: 90%;
-    /* width: 100%;
-    width: calc(100% - 25px);
-     */
+    overflow: hidden;
   }
 }
 
