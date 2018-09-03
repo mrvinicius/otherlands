@@ -17,7 +17,9 @@ const Container = children => (
     data-simplebar-auto-hide={false}
     style={{ height: "calc(100% - 49px)" }}
   >
-    {children}
+    {children.map(child => (
+      <div className="grid-card-wrapper">{child}</div>
+    ))}
     <span className="end-space" />
   </SimpleBar>
 );
