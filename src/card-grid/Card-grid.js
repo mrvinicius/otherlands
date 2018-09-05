@@ -9,16 +9,14 @@ const compose = (...fns) => fns.reduceRight(pair);
 const prop = propName => obj => obj[propName];
 
 const Container = children => (
-  // <div className="Card-grid">
-  //   {children}
-  //   {/* <span className="end-space" /> */}
-  // </div>
   <SimpleBar
     data-simplebar-auto-hide={false}
     style={{ height: "calc(100% - 49px)" }}
   >
     {children.map(child => (
-      <div className="grid-card-wrapper">{child}</div>
+      <div key={child.key} className="grid-card-wrapper">
+        {child}
+      </div>
     ))}
     <span className="end-space" />
   </SimpleBar>

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Destination-card.css";
+import DestinationDetails from "../destination-details/Destination-details";
 
-const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
+const DestinationCard = ({ imgUrl, title, description, onClick }) => {
   let hasCSSObjectFitSup =
     CSS.supports &&
     (CSS.supports("object-fit", "cover") ||
@@ -14,15 +15,13 @@ const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
   });
 
   return (
-    <div
-      onClick={event => onClick(event)}
-      className={`Destination-card cPointer z-depth-3`}
-    >
+    <div onClick={onClick} className={`Destination-card cPointer z-depth-3`}>
       <div className="card-img-container">{img}</div>
       <div className="card-text-container">
         <h5>{title}</h5>
         <p>{description}</p>
       </div>
+      <DestinationDetails destination={{ imgUrl, title, description }} />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import {
 import "./App.css";
 import Explore from "./explore/Explore";
 import Flights from "./flights/Flights";
+// import DestinationDetails from "./destination-details/Destination-details";
 
 const App = store => (
   <Router>
@@ -37,7 +38,7 @@ const App = store => (
           </ul>
         </nav>
       </div>
-      <main className="Content-container otl-green">
+      <main className="Content-container content-container-dimensions otl-green">
         <div className="top-bar white-text">
           <button
             className="icon-flat-btn"
@@ -66,7 +67,7 @@ function toggleSidebar(store) {
   return () => store.dispatch({ type: "TOGGLE_SIDEBAR" });
 }
 
-App.render = node => {
+App.render = function(node) {
   return props => {
     ReactDOM.render(<App {...props} />, node);
   };

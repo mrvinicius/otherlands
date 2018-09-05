@@ -5,13 +5,13 @@ const min800px = window.matchMedia("only screen and (min-width: 801px)");
 
 const DestinationCardContainer = destination => (
   <DestinationCard
-    key={destination.id}
     {...destination}
-    onClick={getClickHandlerByQuery(min800px)}
+    key={destination.id}
+    onClick={createClickHandlerByQuery(min800px)}
   />
 );
 
-function getClickHandlerByQuery(mediaQueryList) {
+function createClickHandlerByQuery(mediaQueryList) {
   let isClosed = true,
     lastTopDistance;
   return function handleClick(event) {
@@ -57,8 +57,8 @@ function setCardTransitionEndHandler(card, mediaQueryList) {
 }
 
 // TODO: state management integration, action trigger access
-function updateHistory(id) {
-  window.history.pushState({}, "", `/explore/destination/${id}`);
-}
+// function updateHistory(id) {
+//   window.history.pushState({}, "", `/explore/destination/${id}`);
+// }
 
 export default DestinationCardContainer;

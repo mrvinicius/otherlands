@@ -1,7 +1,10 @@
 import React from "react";
+// import { Route } from "react-router-dom";
 import SearchField from "../search-field/Search-field";
 import CardGrid from "../card-grid/Card-grid";
 import "./Explore.css";
+
+// import DestinationDetails from "../destination-details/Destination-details";
 
 const Explore = ({ destinations }) => (
   <div>
@@ -13,6 +16,7 @@ const Explore = ({ destinations }) => (
       </header>
       <CardGrid destinations={destinations} />
     </section>
+    {/* <Route path="/explore/destination/:id" component={DestinationDetails} /> */}
   </div>
 );
 
