@@ -1,9 +1,13 @@
 .Destination-card {
   position: relative;
   border-radius: 7px;
-  height: 55vh;
+  height: 60vh;
   min-height: 205px;
   overflow: hidden;
+}
+
+.Destination-card:not(.open) {
+  max-height: 500px;
 }
 
 .card-img-container {
@@ -33,13 +37,13 @@
   bottom: 0;
   padding: 20px 15px;
   width: 100%;
-  height: 40%;
+  height: 45%;
 }
 .card-text-background {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 40%;
+  height: 45%;
   background-color: white;
 }
 
@@ -50,8 +54,17 @@
 }
 
 .Destination-card .title ~ .sub-title {
-  margin-top: 0.5em;
+  margin: 0em;
   font-weight: 500;
+}
+
+@media only screen and (min-width: 801px) {
+  .card-text-container {
+    font-size: 0.9em;
+  }
+  .card-text-container .title {
+    font-size: 2.3em;
+  }
 }
 
 .card-text-container--hidden

@@ -57,8 +57,15 @@
   text-transform: uppercase;
 }
 
-.cPointer {
+.cursor-pointer {
   cursor: pointer;
+}
+
+.text-truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 html {

@@ -15,12 +15,18 @@ const DestinationCard = ({ imgUrl, title, description, onClick }) => {
   });
 
   return (
-    <div onClick={onClick} className={`Destination-card cPointer z-depth-3`}>
+    <div
+      onClick={onClick}
+      className={`Destination-card cursor-pointer z-depth-3`}
+    >
       <div className="card-img-container">{img}</div>
       <div className="card-text-background" />
       <div className="card-text-container">
-        <h5 className="title">{title}</h5>
-        <p className="sub-title">{description}</p>
+        <h5 className="title text-truncate">{title}</h5>
+        <p className="sub-title black-secondary-text">
+          {description.substr(0, 110).trim() +
+            `${description.length > 110 ? "..." : ""}`}
+        </p>
       </div>
       <DestinationDetails {...{ imgUrl, title, description }} />
     </div>
