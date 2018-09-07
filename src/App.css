@@ -29,7 +29,12 @@
 }
 
 .top-bar {
-  padding: 15px 20px;
+  display: flex;
+  padding: 15px 25px;
+}
+
+.top-bar .push {
+  margin-left: auto !important;
 }
 
 .fw600 {
@@ -46,6 +51,10 @@
 
 .dim-text {
   color: rgba(0, 0, 0, 0.38);
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .cPointer {
@@ -210,7 +219,8 @@ html {
 .section-title {
   font-size: 0.9rem;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 .icon-flat-btn {

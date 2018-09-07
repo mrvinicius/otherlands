@@ -15,7 +15,8 @@ function createClickHandlerByQuery(mediaQueryList) {
   let isClosed = true,
     lastTopDistance;
   return function handleClick(event) {
-    const card = event.currentTarget;
+    const card = event.currentTarget,
+      cardTextContainer = card.querySelector(".card-text-container");
 
     if (isClosed) {
       if (mediaQueryList.matches) {
@@ -26,6 +27,7 @@ function createClickHandlerByQuery(mediaQueryList) {
       lastTopDistance = `${card.getBoundingClientRect().top}px`;
       card.style.top = lastTopDistance;
       card.classList.add("open");
+      cardTextContainer.classList.add("card-text-container--hidden");
 
       const timeout = setTimeout(() => {
         card.classList.add("open-active");
@@ -33,6 +35,7 @@ function createClickHandlerByQuery(mediaQueryList) {
       });
     } else {
       card.classList.remove("open-active");
+      cardTextContainer.classList.remove("card-text-container--hidden");
       setCardTransitionEndHandler(card, mediaQueryList);
     }
     isClosed = !isClosed;

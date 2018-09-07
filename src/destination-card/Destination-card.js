@@ -17,11 +17,12 @@ const DestinationCard = ({ imgUrl, title, description, onClick }) => {
   return (
     <div onClick={onClick} className={`Destination-card cPointer z-depth-3`}>
       <div className="card-img-container">{img}</div>
+      <div className="card-text-background" />
       <div className="card-text-container">
-        <h5>{title}</h5>
-        <p>{description}</p>
+        <h5 className="title">{title}</h5>
+        <p className="sub-title">{description}</p>
       </div>
-      <DestinationDetails destination={{ imgUrl, title, description }} />
+      <DestinationDetails {...{ imgUrl, title, description }} />
     </div>
   );
 };

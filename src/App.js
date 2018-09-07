@@ -10,17 +10,13 @@ import {
 import "./App.css";
 import Explore from "./explore/Explore";
 import Flights from "./flights/Flights";
-// import DestinationDetails from "./destination-details/Destination-details";
 
 const App = store => (
   <Router>
     <div id="app" className="App">
-      {/* <SideBar active={store.getState().sidebarActive} /> */}
-      <div
+      <section
         className={`Side-bar ${store.getState().sidebarActive ? "active" : ""}`}
       >
-        {/* <header className="App-header">LOGO {active}</header> */}
-
         <nav className="App-nav fw600 dim-text">
           <ul>
             <li>
@@ -37,7 +33,7 @@ const App = store => (
             </li>
           </ul>
         </nav>
-      </div>
+      </section>
       <main className="Content-container content-container-dimensions otl-green">
         <div className="top-bar white-text">
           <button
