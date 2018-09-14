@@ -2,7 +2,7 @@ import React from "react";
 import "./Destination-card.css";
 import DestinationDetails from "../destination-details/Destination-details";
 
-const DestinationCard = ({ imgUrl, title, description, onClick }) => {
+function DestinationCard({ imgUrl, title, description, innerRef, close }) {
   let hasCSSObjectFitSup =
     CSS.supports &&
     (CSS.supports("object-fit", "cover") ||
@@ -15,10 +15,7 @@ const DestinationCard = ({ imgUrl, title, description, onClick }) => {
   });
 
   return (
-    <div
-      onClick={onClick}
-      className={`Destination-card cursor-pointer z-depth-3`}
-    >
+    <div ref={innerRef} className={"Destination-card z-depth-3"}>
       <div className="card-img-container">{img}</div>
       <div className="card-text-background" />
       <div className="card-text-container">
@@ -28,10 +25,10 @@ const DestinationCard = ({ imgUrl, title, description, onClick }) => {
             `${description.length > 110 ? "..." : ""}`}
         </p>
       </div>
-      <DestinationDetails {...{ imgUrl, title, description }} />
+      <DestinationDetails {...{ imgUrl, title, description }} close={close} />
     </div>
   );
-};
+}
 
 function handleImgSize({ target }) {
   let parentHeight = target.parentNode.clientHeight;
