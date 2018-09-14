@@ -1,7 +1,8 @@
 import React from "react";
 import "./Destination-card.css";
+import DestinationDetails from "../destination-details/Destination-details";
 
-const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
+function DestinationCard({ imgUrl, title, description, innerRef, close }) {
   let hasCSSObjectFitSup =
     CSS.supports &&
     (CSS.supports("object-fit", "cover") ||
@@ -14,42 +15,28 @@ const DestinationCard = ({ id, imgUrl, title, description, onClick }) => {
   });
 
   return (
-    <div
-      onClick={getClickHandler(onClick)}
-      className={`Destination-card cPointer z-depth-3 ${""}`}
-    >
+    <div ref={innerRef} className={"Destination-card z-depth-3"}>
       <div className="card-img-container">{img}</div>
+      <div className="card-text-background" />
       <div className="card-text-container">
-        <h5>{title}</h5>
-        <p>{description}</p>
+        <h5 className="title text-truncate">{title}</h5>
+        <p className="sub-title black-secondary-text">
+          {description.substr(0, 110).trim() +
+            `${description.length > 110 ? "..." : ""}`}
+        </p>
       </div>
+      <DestinationDetails {...{ imgUrl, title, description }} close={close} />
     </div>
   );
-};
-
-function getClickHandler(callback) {
-  return event => callback(event);
-
-  // return event => {
-  //   const card = event.currentTarget;
-
-  //   card.classList.toggle("open");
-  //   card.style.top = `${card.getBoundingClientRect().top}px`;
-  //   setTimeout(() => {
-  //     card.classList.toggle("opening");
-  //   });
-
-  //   callback(event);
-  // };
 }
 
-const handleImgSize = ({ target }) => {
+function handleImgSize({ target }) {
   let parentHeight = target.parentNode.clientHeight;
   if (target.height < parentHeight) {
     let additionalSize = parentHeight - target.height;
     target.style.height = target.height + additionalSize + "px";
     target.style.width = target.width + additionalSize + "px";
   }
-};
+}
 
 export default DestinationCard;
